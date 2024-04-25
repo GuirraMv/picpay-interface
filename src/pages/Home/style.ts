@@ -12,12 +12,12 @@ const style = StyleSheet.create({
     height: 80,
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 20,
+    marginTop: 40,
     backgroundColor: colors.background.light,
   },
   containerIcon: {
     backgroundColor: colors.icon.background.light,
-    marginLeft: 10,
+    marginLeft: 8,
     height: 40,
     width: 40,
     borderRadius:
@@ -25,9 +25,14 @@ const style = StyleSheet.create({
         Dimensions.get("window").width + Dimensions.get("window").height
       ) / 2,
     justifyContent: "center",
+    alignContent: "center",
+    alignSelf: "center",
   },
   icon: {
     alignSelf: "center",
+  },
+  iconButtonCard: {
+    paddingLeft: 4,
   },
   containerInput: {
     backgroundColor: colors.input.background,
@@ -39,11 +44,12 @@ const style = StyleSheet.create({
     height: 50,
     alignItems: "center",
     flexDirection: "row",
-    marginLeft: 15,
+    marginLeft: 10,
   },
   input: {
-    backgroundColor: colors.input.background,
     fontSize: 18,
+    width: "80%",
+    height: "80%",
   },
   iconInput: {
     marginRight: 12,

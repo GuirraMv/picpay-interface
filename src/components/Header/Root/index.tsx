@@ -1,11 +1,10 @@
 import { ReactNode } from "react";
-import { StyleProp, View, ViewStyle } from "react-native";
+import { View, ViewProps } from "react-native";
 
-interface RootProps {
+interface RootProps extends ViewProps {
   children: ReactNode;
-  style?: StyleProp<ViewStyle>;
 }
 
-export function Root({ children, style }: RootProps) {
-  return <View style={style}>{children}</View>;
+export function Root({ children, ...rest }: RootProps) {
+  return <View {...rest}>{children}</View>;
 }
