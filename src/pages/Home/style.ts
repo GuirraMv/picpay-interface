@@ -55,6 +55,36 @@ const style = StyleSheet.create({
     marginRight: 12,
     marginLeft: 12,
   },
+  containerCard: {
+    height: 350,
+    flexDirection: "row",
+    zIndex: 1,
+    gap: 15,
+    paddingHorizontal: 20,
+  },
+  headerCard: {
+    marginLeft: "55%",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  rowCenterCard: {
+    marginTop: 5,
+    flexDirection: "row",
+    width: "100%",
+    alignItems: "center",
+    height: "10%",
+  },
+  bottomButton: {
+    backgroundColor: colors.background.light,
+    borderRadius: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    height: 60,
+    alignSelf: "center",
+    position: "absolute",
+    bottom: 15,
+    width: "90%",
+  },
 });
 
 export default style;

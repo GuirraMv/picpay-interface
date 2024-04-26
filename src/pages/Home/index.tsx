@@ -1,4 +1,5 @@
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import React, { useState } from "react";
 import { View, ScrollView } from "react-native";
@@ -66,107 +67,115 @@ export const Home = () => {
           />
         </Header.Root>
 
-        <View
-          style={{
-            width: "100%",
-            height: 350,
-            flexDirection: "row",
-            justifyContent: "center",
-          }}
-        >
-          <Card.Root>
-            <View
-              style={{
-                flexDirection: "row",
-              }}
-            >
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={style.containerCard}>
+            <Card.Root backgroundColor={colors.button.green}>
+              <View
+                style={{
+                  flexDirection: "row",
+                }}
+              >
+                <Card.Text
+                  text="Conta"
+                  color={colors.font.light}
+                  fontWeight="600"
+                />
+                <Card.Button
+                  style={style.headerCard}
+                  label="Ver extrato"
+                  colorLabel={colors.font.light}
+                  fontWeight="600"
+                  icon={
+                    <MaterialIcons
+                      name="arrow-forward-ios"
+                      size={16}
+                      color={colors.icon.light}
+                    />
+                  }
+                />
+              </View>
+
+              <View style={{ marginTop: 30 }}>
+                <Card.Text
+                  color={colors.font.light}
+                  text="Saldo em conta"
+                  fontWeight="600"
+                  fontSize={24}
+                />
+              </View>
+
               <Card.Text
-                text="Conta"
                 color={colors.font.light}
+                text="R$ 1.200"
+                fontSize={24}
                 fontWeight="600"
+                style={{ marginTop: 5 }}
               />
+
+              <View style={style.rowCenterCard}>
+                <Card.Text
+                  text="Rendendo 102% do CDI"
+                  color={colors.font.light}
+                  style={{ opacity: 0.9, width: "90%" }}
+                />
+
+                <Card.Button
+                  onPress={() => setVisible(!visible)}
+                  icon={
+                    <Ionicons
+                      name={
+                        visible === true ? "eye-outline" : "eye-off-outline"
+                      }
+                      size={28}
+                      color={colors.icon.light}
+                    />
+                  }
+                />
+              </View>
+
+              <Card.Button
+                style={style.bottomButton}
+                label="Invista seu dinheiro"
+                fontWeight="600"
+                fontSize={16}
+                colorLabel={colors.font.dark}
+              />
+            </Card.Root>
+
+            <Card.Root backgroundColor={colors.button.light}>
+              <View
+                style={{
+                  flexDirection: "row",
+                }}
+              >
+                <Card.Text
+                  text="Cartão de crédito"
+                  color={colors.font.dark}
+                  fontWeight="600"
+                />
+              </View>
+
+              <Card.Text
+                color={colors.font.dark}
+                text="Encontre tudo sobre seu PicPay Card"
+                fontWeight="600"
+                fontSize={28}
+                style={{ marginTop: 20, width: "60%" }}
+              />
+
               <Card.Button
                 style={{
-                  marginLeft: "55%",
-                  flexDirection: "row",
-                  alignItems: "center",
+                  ...style.bottomButton,
+                  backgroundColor: colors.button.dark,
                 }}
-                label="Ver extrato"
+                label="Acessar cartão"
+                fontWeight="600"
+                fontSize={16}
                 colorLabel={colors.font.light}
-                fontWeight="600"
-                icon={
-                  <MaterialIcons
-                    name="arrow-forward-ios"
-                    size={16}
-                    color={colors.icon.light}
-                  />
-                }
               />
-            </View>
-
-            <View style={{ marginTop: 30 }}>
-              <Card.Text
-                color={colors.font.light}
-                text="Saldo em conta"
-                fontWeight="600"
-                fontSize={20}
-              />
-            </View>
-
-            <Card.Text
-              color={colors.font.light}
-              text="1.200"
-              fontSize={20}
-              fontWeight="600"
-              style={{ marginTop: 20 }}
-            />
-
-            <View
-              style={{
-                marginTop: 10,
-                flexDirection: "row",
-                alignItems: "center",
-                width: "100%",
-              }}
-            >
-              <Card.Text
-                text="Rendendo 102% do CDI"
-                color={colors.font.light}
-                style={{ opacity: 0.9 }}
-              />
-
-              <Card.Button
-                style={{ width: "80%", alignSelf: "flex-end" }}
-                onPress={() => setVisible(!visible)}
-                icon={
-                  <FontAwesome6
-                    name={visible === true ? "eye" : "eye-slash"}
-                    size={18}
-                    color={colors.icon.light}
-                    style={style.icon}
-                  />
-                }
-              />
-            </View>
-
-            <Card.Button
-              style={{
-                backgroundColor: colors.background.light,
-                borderRadius: 40,
-                alignItems: "center",
-                justifyContent: "center",
-                height: 60,
-                alignSelf: "center",
-                position: "absolute",
-                bottom: 10,
-                width: "90%",
-              }}
-              label="Invista seu dinheiro"
-              fontSize={16}
-              colorLabel={colors.font.dark}
-            />
-          </Card.Root>
-        </View>
+            </Card.Root>
+          </View>
+        </ScrollView>
       </ScrollView>
     </View>
   );

@@ -5,6 +5,7 @@ import {
   TouchableOpacityProps,
   ColorValue,
 } from "react-native";
+import style from "./style";
 
 interface ButtonProps extends TouchableOpacityProps {
   label?: ReactNode;
@@ -36,14 +37,7 @@ export function Button({
   ...rest
 }: ButtonProps) {
   return (
-    <TouchableOpacity
-      style={{
-        justifyContent: "center",
-        alignItems: "baseline",
-        flexDirection: "row",
-      }}
-      {...rest}
-    >
+    <TouchableOpacity style={style.container} {...rest}>
       <Text
         style={{
           fontSize: fontSize,
