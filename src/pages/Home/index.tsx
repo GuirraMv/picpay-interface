@@ -1,13 +1,15 @@
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import React, { useState } from "react";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, Text } from "react-native";
 
 import style from "./style";
 import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import colors from "../../theme/colors";
+import { Button } from "../../components/Button";
 
 export const Home = () => {
   const [visible, setVisible] = useState(true);
@@ -176,6 +178,81 @@ export const Home = () => {
             </Card.Root>
           </View>
         </ScrollView>
+
+        <View style={{ marginLeft: 20 }}>
+          <Text
+            style={{
+              color: colors.font.dark,
+              fontSize: 20,
+              fontWeight: "bold",
+            }}
+          >
+            Pro dia a dia
+          </Text>
+
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <View
+              style={{
+                width: "100%",
+              }}
+            >
+              <Button.Root>
+                <Button.Container
+                  selected
+                  description="Pix"
+                  icon={
+                    <FontAwesome6
+                      name="pix"
+                      color={colors.icon.light}
+                      size={20}
+                    />
+                  }
+                />
+                <Button.Text text="Pix" />
+
+                <Button.Container
+                  icon={
+                    <FontAwesome6
+                      name="barcode"
+                      color={colors.icon.dark}
+                      size={20}
+                    />
+                  }
+                />
+
+                <Button.Container
+                  icon={
+                    <FontAwesome5
+                      name="money-bill"
+                      color={colors.icon.dark}
+                      size={20}
+                    />
+                  }
+                />
+
+                <Button.Container
+                  icon={
+                    <FontAwesome6
+                      name="piggy-bank"
+                      color={colors.icon.dark}
+                      size={20}
+                    />
+                  }
+                />
+
+                <Button.Container
+                  icon={
+                    <MaterialIcons
+                      name="smartphone"
+                      color={colors.icon.dark}
+                      size={20}
+                    />
+                  }
+                />
+              </Button.Root>
+            </View>
+          </ScrollView>
+        </View>
       </ScrollView>
     </View>
   );
